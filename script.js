@@ -168,25 +168,43 @@ function renderCharts(data) {
         }
     });
 
-    // --- TRIMESTRE CHART ---
+    // --- TRIMESTRE CHART (con extaprolación a Junio) ---
+    // Unimos los datos históricos reales con los previstos según la tendencia puramente de 2026 (Escenario 4)
+    const combinedLabels = [...data.historico.labels, ...data.proyeccion.labels];
+    const combinedData = [...data.historico.data, ...data.proyeccion.escenario4];
+    
+    // Para destacar visualmente qué es real (cerrado) y qué es previsto (proyección)
+    const bgColors = [
+        'rgba(139, 92, 246, 0.8)', 'rgba(139, 92, 246, 0.8)', 'rgba(139, 92, 246, 0.8)', // Reales
+        'rgba(245, 158, 11, 0.6)', 'rgba(245, 158, 11, 0.6)', 'rgba(245, 158, 11, 0.6)'  // Proyectadas (Amber/Naranja claro para alertar tendencia)
+    ];
+    
+    const borders = [
+        '#8b5cf6', '#8b5cf6', '#8b5cf6',
+        '#f59e0b', '#f59e0b', '#f59e0b'
+    ];
+
     chartTrimestre = new Chart(ctxTrim, {
         type: 'bar',
         data: {
-            labels: data.historico.labels,
+            labels: combinedLabels,
             datasets: [{
                 label: 'Volumen Estructural en Espera',
-                data: data.historico.data,
-                backgroundColor: 'rgba(139, 92, 246, 0.4)',
-                borderColor: '#8b5cf6',
+                data: combinedData,
+                backgroundColor: bgColors,
+                borderColor: borders,
                 borderWidth: 2,
                 borderRadius: 8
             }]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
+            plugins: { 
+                legend: { display: false },
+                tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.9)' }
+            },
             scales: {
-                y: { grid: { color: 'rgba(255,255,255,0.05)' }, min: data.historico.data[0] * 0.9 },
+                y: { grid: { color: 'rgba(255,255,255,0.05)' }, min: data.historico.data[0] * 0.95 },
                 x: { grid: { display: false } }
             }
         }
