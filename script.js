@@ -13,31 +13,6 @@ const colors = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Login Logic
-    const loginBtn = document.getElementById('login-btn');
-    const passInput = document.getElementById('password-input');
-    const loginOverlay = document.getElementById('login-overlay');
-    const mainContainer = document.getElementById('main-container');
-    const loginError = document.getElementById('login-error');
-
-    const attemptLogin = () => {
-        if(passInput.value === 'SMS.2026') {
-            loginOverlay.style.display = 'none';
-            mainContainer.style.display = 'block';
-            initApp();
-        } else {
-            loginError.style.display = 'block';
-        }
-    };
-
-    loginBtn.addEventListener('click', attemptLogin);
-    passInput.addEventListener('keypress', (e) => {
-        if(e.key === 'Enter') attemptLogin();
-    });
-});
-
-function initApp() {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
@@ -51,8 +26,6 @@ function initApp() {
 
     // Tab Listeners
     document.querySelectorAll('.tab-btn').forEach(btn => {
-        // Ignoramos el boton de login para tabs
-        if(btn.id === 'login-btn') return;
         btn.addEventListener('click', (e) => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             const targetBtn = e.currentTarget;
