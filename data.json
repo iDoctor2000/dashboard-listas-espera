@@ -1,0 +1,155 @@
+{
+    "leq": {
+        "historico": {
+            "labels": [
+                "Enero 2026",
+                "Febrero 2026",
+                "Marzo 2026"
+            ],
+            "data": [
+                30800,
+                31200,
+                34601
+            ]
+        },
+        "proyeccion": {
+            "labels": [
+                "Abril 2026",
+                "Mayo 2026",
+                "Junio 2026"
+            ],
+            "escenario1": [
+                34701,
+                34801,
+                34901
+            ],
+            "escenario2": [
+                35401,
+                36201,
+                37001
+            ],
+            "escenario3": [
+                35901,
+                37201,
+                38501
+            ],
+            "escenario4": [
+                36501.5,
+                38402.0,
+                40302.5
+            ]
+        },
+        "actual_marzo": 34601,
+        "proy_junio_esc1": 34901,
+        "proy_junio_esc2": 37001,
+        "proy_junio_esc3": 38501,
+        "proy_junio_esc4": 40302.5,
+        "tm_marzo": 99.4,
+        "tm_esc1": 100.26182480275138,
+        "tm_esc2": 106.29459842201094,
+        "tm_esc3": 110.60372243576776,
+        "tm_esc4": 115.77898037628972
+    },
+    "cex": {
+        "historico": {
+            "labels": [
+                "Enero 2026",
+                "Febrero 2026",
+                "Marzo 2026"
+            ],
+            "data": [
+                109819,
+                109164,
+                110154
+            ]
+        },
+        "proyeccion": {
+            "labels": [
+                "Abril 2026",
+                "Mayo 2026",
+                "Junio 2026"
+            ],
+            "escenario1": [
+                112154,
+                114154,
+                116154
+            ],
+            "escenario2": [
+                116154,
+                122154,
+                128154
+            ],
+            "escenario3": [
+                116154,
+                122154,
+                128154
+            ],
+            "escenario4": [
+                110321.5,
+                110489.0,
+                110656.5
+            ]
+        },
+        "actual_marzo": 110154,
+        "proy_junio_esc1": 116154,
+        "proy_junio_esc2": 128154,
+        "proy_junio_esc3": 128154,
+        "proy_junio_esc4": 110656.5,
+        "tm_marzo": 67.0,
+        "tm_esc1": 70.64943624380413,
+        "tm_esc2": 77.94830873141238,
+        "tm_esc3": 77.94830873141238,
+        "tm_esc4": 67.3056402854186
+    },
+    "pruebas": {
+        "historico": {
+            "labels": [
+                "Enero 2026",
+                "Febrero 2026",
+                "Marzo 2026"
+            ],
+            "data": [
+                61251,
+                59560,
+                57011
+            ]
+        },
+        "proyeccion": {
+            "labels": [
+                "Abril 2026",
+                "Mayo 2026",
+                "Junio 2026"
+            ],
+            "escenario1": [
+                56511,
+                56011,
+                55511
+            ],
+            "escenario2": [
+                59511,
+                62011,
+                64511
+            ],
+            "escenario3": [
+                61011,
+                65011,
+                69011
+            ],
+            "escenario4": [
+                54891,
+                52771,
+                50651
+            ]
+        },
+        "actual_marzo": 57011,
+        "proy_junio_esc1": 55511,
+        "proy_junio_esc2": 64511,
+        "proy_junio_esc3": 69011,
+        "proy_junio_esc4": 50651,
+        "tm_marzo": 45.0,
+        "tm_esc1": 43.816017961446036,
+        "tm_esc2": 50.91991019276981,
+        "tm_esc3": 54.47185630843171,
+        "tm_esc4": 39.979916156531196
+    }
+}

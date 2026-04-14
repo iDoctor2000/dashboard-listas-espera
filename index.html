@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyección Lista de Espera Quirúrgica</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hologram-bg"></div>
+    <div class="container">
+        
+        <header class="glass-header">
+            <div>
+                <h1>🔮 LEQ Forecast 2026</h1>
+                <p>Simulador Predictivo de la Lista de Espera Quirúrgica - Junio 2026</p>
+            </div>
+            <div class="status-badge">
+                <span class="pulsing-dot"></span> Algoritmo Activo
+            </div>
+        </header>
+
+        <!-- Navegación del Centro de Mando -->
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="leq">🔪 Quirúrgica</button>
+            <button class="tab-btn" data-tab="cex">🩺 C. Externas</button>
+            <button class="tab-btn" data-tab="pruebas">🔬 Pruebas Diagnósticas</button>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card glass-panel anim-fade-in" style="animation-delay: 0.1s;">
+                <h3>Punto Partida (Marzo)</h3>
+                <h2 id="kpi-marzo">...</h2>
+                <span class="subtext">Pacientes</span>
+                <div class="time-metric"><span class="clock-icon">⏱</span> <span id="tm-marzo">--</span> <span class="time-label">T. Medio</span></div>
+            </div>
+            
+            <div class="kpi-card glass-panel kpi-esc1 anim-fade-in" style="animation-delay: 0.2s;">
+                <h3>Escenario 1: Normal</h3>
+                <h2 id="kpi-esc1">...</h2>
+                <span class="subtext">Al 30 junio (Tendencia Actual)</span>
+                <div class="time-metric"><span class="clock-icon">⏱</span> <span id="tm-esc1">--</span> <span class="time-label">T. Medio Estimado</span></div>
+            </div>
+            
+            <div class="kpi-card glass-panel kpi-esc2 anim-fade-in" style="animation-delay: 0.3s;">
+                <h3>Escenario 2: Sin JE</h3>
+                <h2 id="kpi-esc2">...</h2>
+                <span class="subtext (+)">Impacto: Sin Act. Ext.</span>
+                <div class="time-metric"><span class="clock-icon">⏱</span> <span id="tm-esc2">--</span> <span class="time-label">T. Medio Estimado</span></div>
+            </div>
+
+            <div class="kpi-card glass-panel kpi-esc3 anim-fade-in" style="animation-delay: 0.4s;">
+                <h3>Escenario 3: Solo Ordinaria</h3>
+                <h2 id="kpi-esc3">...</h2>
+                <span class="subtext (+)">Sin JE ni Concertada</span>
+                <div class="time-metric"><span class="clock-icon">⏱</span> <span id="tm-esc3">--</span> <span class="time-label">T. Medio Estimado</span></div>
+            </div>
+            <div class="kpi-card glass-panel kpi-esc4 anim-fade-in" style="animation-delay: 0.5s;">
+                <h3>Escenario 4: Puro 2026</h3>
+                <h2 id="kpi-esc4">...</h2>
+                <span class="subtext">Tendencia Ene-Mar '26</span>
+                <div class="time-metric"><span class="clock-icon">⏱</span> <span id="tm-esc4">--</span> <span class="time-label">T. Medio Estimado</span></div>
+            </div>
+        </div>
+
+        <div class="chart-container glass-panel anim-fade-in" style="animation-delay: 0.5s;">
+            <div class="chart-header">
+                <h2>📈 Curva de Proyección (Marzo - Junio 2026)</h2>
+                <div class="legend-controls" id="legend-controls">
+                    <!-- Dynamic legend will go here -->
+                </div>
+            </div>
+            <div style="position: relative; height: 50vh; width: 100%">
+                <canvas id="mainChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-container glass-panel anim-fade-in" style="animation-delay: 0.6s;">
+            <div class="chart-header">
+                <h2>📊 Evolución Real 1º Trimestre (Enero - Marzo 2026)</h2>
+            </div>
+            <div style="position: relative; height: 40vh; width: 100%">
+                <canvas id="trimestreChart"></canvas>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
