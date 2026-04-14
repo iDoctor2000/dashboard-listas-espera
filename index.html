@@ -10,7 +10,20 @@
 </head>
 <body>
     <div class="hologram-bg"></div>
-    <div class="container">
+
+    <!-- Pantalla de Login -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="glass-panel login-box">
+            <h2>🔒 Acceso Restringido</h2>
+            <p>Introduce la clave para acceder al centro de mando</p>
+            <input type="password" id="password-input" placeholder="Contraseña">
+            <button id="login-btn" class="tab-btn active" style="margin-top:1rem; width:100%;">Entrar</button>
+            <p id="login-error" style="color:var(--danger); display:none; margin-top:0.5rem; font-size:0.9rem;">Contraseña incorrecta</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal (Oculto inicialmente por CSS) -->
+    <div class="container" id="main-container" style="display: none;">
         
         <header class="glass-header">
             <div class="header-titles">
