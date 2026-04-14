@@ -63,6 +63,10 @@ function loadTabData(tabId) {
     document.getElementById('tm-esc3').innerText = data.tm_esc3.toFixed(0) + " d";
     document.getElementById('tm-esc4').innerText = data.tm_esc4.toFixed(0) + " d";
     
+    // Cambiar la etiqueta dinámicamente si estamos en "pruebas" (Espera Media) o en el resto (Tiempo Medio)
+    const labelText = tabId === 'pruebas' ? 'E. Media Estimada' : 'T. Medio Estimado';
+    document.querySelectorAll('.time-label').forEach(el => el.innerText = labelText);
+
     // Calculamos el incremento %
     const percSc2 = (((data.proy_junio_esc2 - data.proy_junio_esc1) / data.proy_junio_esc1) * 100).toFixed(1);
     const percSc3 = (((data.proy_junio_esc3 - data.proy_junio_esc1) / data.proy_junio_esc1) * 100).toFixed(1);
